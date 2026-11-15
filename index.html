@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share & Care | شارك واهتم</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #10B981;
+            --primary-dark: #059669;
+            --secondary: #F59E0B;
+            --bg-light: #F3F4F6;
+            --white: #FFFFFF;
+            --text-dark: #1F2937;
+            --text-gray: #6B7280;
+            --border: #E5E7EB;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background-color: #E2E8F0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* إطار التطبيق لمحاكاة الجوال والويب المتجاوب */
+        .app-container {
+            width: 100%;
+            max-width: 450px;
+            height: 820px;
+            background-color: var(--bg-light);
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            border: 8px solid #1E293B;
+        }
+
+        /* شريط التنقل العلوي */
+        .top-bar {
+            background-color: var(--white);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .icon-btn {
+            background: var(--bg-light);
+            border: none;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: 0.2s;
+        }
+
+        .icon-btn:hover {
+            background: #D1FAE5;
+        }
+
+        .badge {
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            background: #EF4444;
+            color: white;
+            font-size: 0.7rem;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* منطقة المحتوى والشاشات */
+        .screens-wrapper {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            padding-bottom: 85px;
+        }
+
+        .screen {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .screen.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* عناصر مشتركة */
+        h2 {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .btn-primary {<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share & Care | شارك واهتم</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #10B981;
+            --primary-dark: #059669;
+            --secondary: #F59E0B;
+            --bg-light: #F3F4F6;
+            --white: #FFFFFF;
+            --text-dark: #1F2937;
+            --text-gray: #6B7280;
+            --border: #E5E7EB;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background-color: #E2E8F0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* إطار التطبيق لمحاكاة الجوال والويب المتجاوب */
+        .app-container {
+            width: 100%;
+            max-width: 450px;
+            height: 820px;
+            background-color: var(--bg-light);
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            border: 8px solid #1E293B;
+        }
+
+        /* شريط التنقل العلوي */
+        .top-bar {
+            background-color: var(--white);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .icon-btn {
+            background: var(--bg-light);
+            border: none;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: 0.2s;
+        }
+
+        .icon-btn:hover {
+            background: #D1FAE5;
+        }
+
+        .badge {
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            background: #EF4444;
+            color: white;
+            font-size: 0.7rem;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* منطقة المحتوى والشاشات */
+        .screens-wrapper {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            padding-bottom: 85px;
+        }
+
+        .screen {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .screen.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* عناصر مشتركة */
+        h2 {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .btn-primary {
+          background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1.5px solid var(--primary);
+            color: var(--primary-dark);
+            margin-top: 8px;
+        }
+
+        .input-group {
+            margin-bottom: 14px;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: var(--text-dark);
+        }
+
+        .input-group input, .input-group textarea, .input-group select {
+            width: 100%;
+            padding: 11px 14px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font-size: 0.95rem;
+            background: var(--white);
+        }
+
+        /* 1. شاشة تسجيل الدخول */
+        .login-hero {
+            text-align: center;
+            padding: 25px 10px;
+        }
+
+        .login-hero .circle-icon {
+            width: 80px;
+            height: 80px;
+            background: #D1FAE5;
+            color: var(--primary-dark);
+            font-size: 2.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+        }
+
+        .goal-box {
+            background: #ECFDF5;
+            border-right: 4px solid var(--primary);
+            padding: 10px 12px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: #065F46;
+            margin-bottom: 20px;
+            text-align: right;
+        }
+
+        /* 2. الشاشة الرئيسية */
+        .categories {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .cat-pill {
+            background: var(--white);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            white-space: nowrap;
+            border: 1px solid var(--border);
+            cursor: pointer;
+        }
+
+        .cat-pill.active {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+
+        .item-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .item-card {
+            background: var(--white);
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .item-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .item-img {
+            height: 110px;
+            background: #E5E7EB;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+        }
+
+        .item-info {
+            padding: 10px;
+        }
+
+        .item-tag {
+            background: #FEF3C7;
+            color: #B45309;
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-weight: 700;
+        }
+
+        .item-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin: 6px 0 4px;
+            color: var(--text-dark);
+        }
+
+        .item-loc {
+            font-size: 0.75rem;
+            color: var(--text-gray);
+        }
+
+        /* 3. شاشة تفاصيل الغرض */
+        .detail-banner {
+            height: 180px;
+            background: #D1FAE5;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4.5rem;
+            margin-bottom: 15px;
+        }
+
+        .user-mini {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+          background: var(--bg-light);
+            border-radius: 12px;
+            margin: 12px 0;
+        }
+
+        /* 5. شاشة المحادثات والطلبات */
+        .chat-box {
+            height: 240px;
+            overflow-y: auto;
+            background: #F9FAFB;
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .msg {
+            max-width: 80%;
+            padding: 10px 14px;
+            border-radius: 14px;
+            font-size: 0.9rem;
+        }
+
+        .msg.received {
+            background: var(--white);
+            border: 1px solid var(--border);
+            align-self: flex-start;
+        }
+
+        .msg.sent {
+            background: var(--primary);
+            color: var(--white);
+            align-self: flex-end;
+        }
+
+        /* 7. الملف الشخصي */
+        .stats-row {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            margin: 15px 0;
+        }
+
+        .stat-num {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+        }
+
+        /* 8. الإشعارات */
+        .notif-item {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            padding-bottom: 12px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .notif-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        /* شريط التنقل السفلي */
+        .bottom-nav {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: var(--white);
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 5px;
+            z-index: 20;
+        }
+
+        .nav-item {
+            background: none;
+            border: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 0.75rem;
+            color: var(--text-gray);
+            cursor: pointer;
+            font-weight: 700;
+            gap: 3px;
+        }
+
+        .nav-item.active {
+            color: var(--primary-dark);
+        }
+
+        .nav-item span.nav-icon {
+            font-size: 1.25rem;
+        }
+
+        /* شريط تنقل سريع بين كل الشاشات لأغراض العرض */
+        .dev-switcher {
+            position: fixed;
+            top: 15px;
+            right: 15px;
+            background: var(--white);
+            padding: 12px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 220px;
+        }
+
+        .dev-switcher h4 {
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .dev-switcher button {
+            display: block;
+            width: 100%;
+            text-align: right;
+            background: var(--bg-light);
+            border: none;
+            padding: 6px 10px;
+            margin-bottom: 5px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            cursor: pointer;
+        }
+
+        .dev-switcher button:hover {
+            background: #D1FAE5;
+        }
+
+        @media (max-width: 850px) {
+            .dev-switcher { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- قائمة جانبية للتنقل السريع بين الشاشات الـ 8 أثناء العرض -->
+    <div class="dev-switcher">
+        <h4> التنقل السريع (8 شاشات):</h4>
+        <button onclick="showScreen('login')">1. تسجيل الدخول</button>
+        <button onclick="showScreen('home')">2. الشاشة الرئيسية</button>
+        <button onclick="showScreen('details')">3. تفاصيل الغرض</button>
+        <button onclick="showScreen('add')">4. إضافة غرض جديد</button>
+        <button onclick="showScreen('chat')">5. المحادثات والطلبات</button>
+        <button onclick="showScreen('delivery')">6. التنسيق والتوصيل</button>
+        <button onclick="showScreen('profile')">7. الملف الشخصي</button>
+        <button onclick="showScreen('notifications')">8. الإشعارات</button>
+    </div>
+    <div class="app-container">
+        <!-- الشريط العلوي -->
+        <div class="top-bar" id="topBar" style="display: none;">
+            <div class="logo">🌱 Share & Care</div>
+            <div style="display: flex; gap: 8px;">
+                <button class="icon-btn" onclick="showScreen('notifications')" title="الإشعارات">
+                    🔔 <span class="badge">3</span>
+                </button>
+                <button class="icon-btn" onclick="showScreen('login')" title="تسجيل الخروج">
+                    🚪
+                </button>
+            </div>
+        </div>
+        <div class="screens-wrapper">
+        
+            <!-- 1. شاشة تسجيل الدخول -->
+            <div id="screen-login" class="screen active">
+                <div class="login-hero">
+                    <div class="circle-icon">🤝</div>
+                    <h1 style="color: var(--primary-dark); font-size: 1.8rem;">Share & Care</h1>
+                    <p style="color: var(--text-gray); margin-top: 5px;">لا تتركها مركونة.. غيرك يحتاجها!</p>
+                </div>
+                <div class="goal-box">
+                    <strong>رسالتنا:</strong> تقليل الهدر وإعادة إحياء الأغراض الصالحة للاستخدام لبناء مجتمع متعاون ومستدام.
+                </div>
+                <div class="card">
+                    <div class="input-group">
+                        <label>البريد الإلكتروني أو رقم الجوال</label>
+                        <input type="text" placeholder="example@email.com" value="sara@sharecare.sa">
+                    </div>
+                    <div class="input-group">
+                        <label>كلمة المرور</label>
+                        <input type="password" placeholder="••••••••" value="12345678">
+                    </div>
+                    <button class="btn btn-primary" onclick="enterApp()">تسجيل الدخول</button>
+                    <button class="btn btn-outline" onclick="enterApp()">إنشاء حساب جديد</button>
+                </div>
+            </div>
+            <!-- 2. الشاشة الرئيسية -->
+            <div id="screen-home" class="screen">
+                <div class="input-group">
+                    <input type="text" placeholder="🔍 ابحث عن كتب، أجهزة، أثاث، ملابس...">
+                </div>
+                <div class="categories">
+                    <div class="cat-pill active">الكل</div>
+                    <div class="cat-pill">📚 كتب</div>
+                    <div class="cat-pill">💻 إلكترونيات</div>
+                    <div class="cat-pill">🪑 أثاث</div>
+                    <div class="cat-pill">🧸 ألعاب</div>
+                </div>
+                <h2>أغراض متاحة للمشاركة</h2>
+                <div class="item-grid">
+                    <div class="item-card" onclick="openDetails('طابعة ليزر HP نظيفة', '🖨️', 'إلكترونيات', 'حي الروضة - جدة', 'أحمد محمد', 'طابعة بحالة ممتازة وتعمل بكفاءة، لم أعد بحاجة إليها بعد التخرج.')">
+                        <div class="item-img">🖨️</div>
+                        <div class="item-info">
+                            <span class="item-tag">ممتازة</span>
+                            <div class="item-title">طابعة ليزر HP</div>
+                            <div class="item-loc">📍 حي الروضة</div>
+                        </div>
+                    </div>
+                    <div class="item-card" onclick="openDetails('مجموعة كتب تطوير ذات', '📚', 'كتب', 'حي النزهة - جدة', 'نورة العتيبي', '5 كتب مقروءة مرة واحدة فقط وبحالة الوكالة، متاحة لأي شخص مهتم بالقراءة.')">
+                        <div class="item-img">📚</div>
+                        <div class="item-info">
+                            <span class="item-tag">كالجديدة</span>
+                            <div class="item-title">كتب تطوير ذات</div>
+                            <div class="item-loc">📍 حي النزهة</div>
+                        </div>
+                    </div>
+                    <div class="item-card" onclick="openDetails('كرسي مكتب مريح', '🪑', 'أثاث', 'حي السلامة - جدة', 'خالد الحربي', 'كرسي مكتب دوار بحالة جيدة جداً، العجلات سليمة والجلد نظيف.')">
+                        <div class="item-img">🪑</div>
+                        <div class="item-info">
+                            <span class="item-tag">جيدة جداً</span>
+                            <div class="item-title">كرسي مكتب دوار</div>
+                            <div class="item-loc">📍 حي السلامة</div>
+                        </div>
+                    </div>
+                    <div class="item-card" onclick="openDetails('دراجة أطفال', '🚲', 'ألعاب', 'حي الشاطئ - جدة', 'ريم السالم', 'دراجة مناسبة لعمر 6-9 سنوات، تحتاج فقط نفخ إطارات.')">
+                        <div class="item-img">🚲</div>
+                        <div class="item-info">
+                            <span class="item-tag">صالحة للاستخدام</span>
+                            <div class="item-title">دراجة أطفال</div>
+                            <div class="item-loc">📍 حي الشاطئ</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 3. شاشة تفاصيل الغرض -->
+            <div id="screen-details" class="screen">
+                <button onclick="showScreen('home')" style="background:none; border:none; color:var(--primary-dark); font-weight:700; margin-bottom:10px; cursor:pointer;">→ العودة للرئيسية</button>
+                <div class="detail-banner" id="det-icon">🖨️</div>
+                <div class="card">
+                    <span class="item-tag" id="det-cat">إلكترونيات</span>
+                    <h2 id="det-title" style="margin-top:8px;">طابعة ليزر HP نظيفة</h2>
+                    <p id="det-loc" style="color:var(--text-gray); font-size:0.9rem; margin-bottom:10px;">📍 حي الروضة - جدة</p>
+                    <p id="det-desc" style="line-height:1.6; color:var(--text-dark); font-size:0.95rem;">
+                        طابعة بحالة ممتازة وتعمل بكفاءة، لم أعد بحاجة إليها بعد التخرج. متوفرة لمن يحتاجها.
+                    </p>
+                    <div class="user-mini">
+                        <div style="font-size:1.8rem;">👤</div>
+                        <div>
+                            <div style="font-weight:700;" id="det-owner">أحمد محمد</div>
+                            <div style="font-size:0.8rem; color:var(--primary-dark);">⭐ عضو متعاون (12 مشاركة)</div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="showScreen('chat')">طلب الغرض وبدء محادثة 💬</button>
+                </div>
+            </div>
+            <!-- 4. شاشة إضافة غرض جديد -->
+            <div id="screen-add" class="screen">
+                <h2>إضافة غرض للمشاركة 🎁</h2>
+                <div class="card">
+                    <div style="border: 2px dashed var(--primary); border-radius: 12px; padding: 20px; text-align: center; margin-bottom: 15px; background: #ECFDF5; cursor: pointer;">
+                        <div style="font-size: 2rem;">📸</div>
+                        <div style="font-size: 0.9rem; font-weight: 700; color: var(--primary-dark);">اضغط لرفع صورة الغرض</div>
+                    </div>
+                    <div class="input-group">
+                        <label>اسم الغرض</label>
+                        <input type="text" id="new-title" placeholder="مثال: شاشة كمبيوتر 24 بوصة">
+                    </div>
+                    <div class="input-group">
+                        <label>التصنيف</label>
+                        <select id="new-cat">
+                            <option>📚 كتب</option>
+                            <option>💻 إلكترونيات</option>
+                            <option>🪑 أثاث</option>
+                            <option>🧸 ألعاب</option>
+                            <option>👕 ملابس</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>حالة الغرض</label>
+                        <select>
+                          <div class="item-card" onclick="openDetails('كرسي مكتب مريح', '🪑', 'أثاث', 'حي السلامة - جدة', 'خالد الحربي', 'كرسي مكتب دوار بحالة جيدة جداً، العجلات سليمة والجلد نظيف.')">
+                        <div class="item-img">🪑</div>
+                        <div class="item-info">
+                            <span class="item-tag">جيدة جداً</span>
+                            <div class="item-title">كرسي مكتب دوار</div>
+                            <div class="item-loc">📍 حي السلامة</div>
+                        </div>
+                    </div>
+
+                    <div class="item-card" onclick="openDetails('دراجة أطفال', '🚲', 'ألعاب', 'حي الشاطئ - جدة', 'ريم السالم', 'دراجة مناسبة لعمر 6-9 سنوات، تحتاج فقط نفخ إطارات.')">
+                        <div class="item-img">🚲</div>
+                        <div class="item-info">
+                            <span class="item-tag">صالحة للاستخدام</span>
+                            <div class="item-title">دراجة أطفال</div>
+                            <div class="item-loc">📍 حي الشاطئ</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. شاشة تفاصيل الغرض -->
+            <div id="screen-details" class="screen">
+                <button onclick="showScreen('home')" style="background:none; border:none; color:var(--primary-dark); font-weight:700; margin-bottom:10px; cursor:pointer;">→ العودة للرئيسية</button>
+                <div class="detail-banner" id="det-icon">🖨️</div>
+                <div class="card">
+                    <span class="item-tag" id="det-cat">إلكترونيات</span>
+                    <h2 id="det-title" style="margin-top:8px;">طابعة ليزر HP نظيفة</h2>
+                    <p id="det-loc" style="color:var(--text-gray); font-size:0.9rem; margin-bottom:10px;">📍 حي الروضة - جدة</p>
+                    <p id="det-desc" style="line-height:1.6; color:var(--text-dark); font-size:0.95rem;">
+                        طابعة بحالة ممتازة وتعمل بكفاءة، لم أعد بحاجة إليها بعد التخرج. متوفرة لمن يحتاجها.
+                    </p>
+
+                    <div class="user-mini">
+                        <div style="font-size:1.8rem;">👤</div>
+                        <div>
+                            <div style="font-weight:700;" id="det-owner">أحمد محمد</div>
+                            <div style="font-size:0.8rem; color:var(--primary-dark);">⭐ عضو متعاون (12 مشاركة)</div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary" onclick="showScreen('chat')">طلب الغرض وبدء محادثة 💬</button>
+                </div>
+            </div>
+
+            <!-- 4. شاشة إضافة غرض جديد -->
+            <div id="screen-add" class="screen">
+                <h2>إضافة غرض للمشاركة 🎁</h2>
+                <div class="card">
+                    <div style="border: 2px dashed var(--primary); border-radius: 12px; padding: 20px; text-align: center; margin-bottom: 15px; background: #ECFDF5; cursor: pointer;">
+                        <div style="font-size: 2rem;">📸</div>
+                        <div style="font-size: 0.9rem; font-weight: 700; color: var(--primary-dark);">اضغط لرفع صورة الغرض</div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>اسم الغرض</label>
+                        <input type="text" id="new-title" placeholder="مثال: شاشة كمبيوتر 24 بوصة">
+                    </div>
+
+                    <div class="input-group">
+                        <label>التصنيف</label>
+                        <select id="new-cat">
+                            <option>📚 كتب</option>
+                            <option>💻 إلكترونيات</option>
+                            <option>🪑 أثاث</option>
+                            <option>🧸 ألعاب</option>
+                            <option>👕 ملابس</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>حالة الغرض</label>
+                        <select>
+                          <option>كالجديد</option>
+                            <option>ممتازة</option>
+                            <option>جيدة جداً</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>وصف الغرض وملاحظاتك</label>
+                        <textarea rows="3" placeholder="اكتب تفاصيل الغرض وطريقة التسليم المفضلة..."></textarea>
+                    </div>
+
+                    <button class="btn btn-primary" onclick="publishItem()">نشر الغرض في المجتمع ✅</button>
+                </div>
+            </div>
+
+            <!-- 5. شاشة المحادثات والطلبات -->
+            <div id="screen-chat" class="screen">
+                <h2>المحادثات والطلبات 💬</h2>
+                <div class="card">
+                    <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:10px; margin-bottom:10px;">
+                        <div>
+                            <strong>أحمد محمد</strong>
+                            <div style="font-size:0.8rem; color:var(--text-gray);">بخصوص: طابعة ليزر HP</div>
+                        </div>
+                        <span class="item-tag" style="background:#D1FAE5; color:#065F46;">طلب مقبول</span>
+                    </div>
+
+                    <div class="chat-box" id="chatBox">
+                        <div class="msg sent">السلام عليكم، أنا طالبة جامعية ومحتاجة الطابعة للدراسة، هل لا زالت متوفرة؟</div>
+                        <div class="msg received">وعليكم السلام ورحمة الله، نعم متوفرة وتفداك! متى يناسبك استلامها؟</div>
+                    </div>
+
+                    <div style="display:flex; gap:8px; margin-bottom:12px;">
+                        <input type="text" id="chatInput" placeholder="اكتب رسالتك هنا..." style="flex:1; padding:10px; border:1px solid var(--border); border-radius:10px;">
+                        <button onclick="sendMessage()" style="background:var(--primary); color:white; border:none; padding:0 15px; border-radius:10px; font-weight:700; cursor:pointer;">إرسال</button>
+                    </div>
+
+                    <button class="btn btn-outline" onclick="showScreen('delivery')">الانتقال لتنسيق الاستلام والتوصيل 🚚</button>
+                </div>
+            </div>
+
+            <!-- 6. شاشة تفاصيل التنسيق والتوصيل -->
+            <div id="screen-delivery" class="screen">
+                <h2>تفاصيل التنسيق والتوصيل 🚚</h2>
+                <div class="card">
+                    <div class="input-group">
+                        <label>طريقة الاستلام</label>
+                        <select>
+                            <option>استلام شخصي من موقع المتبرع</option>
+                            <option>الالتقاء في نقطة عامة قريبة</option>
+                            <option>طلب مندوب توصيل (على حساب المستلم)</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>موقع التسليم / الحي</label>
+                        <input type="text" value="حي الروضة - بجوار جامع التوحيد">
+                    </div>
+
+                    <div class="input-group">
+                        <label>التاريخ والوقت المتفق عليه</label>
+                        <input type="text" value="غداً - الساعة 5:30 مساءً">
+                    </div>
+
+                    <div style="background:#FEF3C7; padding:10px; border-radius:10px; font-size:0.85rem; color:#92400E; margin-bottom:15px;">
+                        🛡️ <strong>نصيحة أمان:</strong> يُفضل دائماً الالتقاء في الأماكن العامة خلال ساعات النهار لضمان سلامة الجميع.
+                    </div>
+
+                    <button class="btn btn-primary" onclick="confirmDelivery()">تأكيد موعد التسليم ✅</button>
+                </div>
+            </div>
+
+            <!-- 7. شاشة الملف الشخصي -->
+            <div id="screen-profile" class="screen">
+                <h2>الملف الشخصي 👤</h2>
+                <div class="card" style="text-align:center;">
+                   <div style="width:75px; height:75px; background:#D1FAE5; border-radius:50%; margin:0 auto 10px; display:flex; align-items:center; justify-content:center; font-size:2.2rem;">👩🏻‍💻</div>
+                    <h3>سارة عبدالله</h3>
+                    <p style="color:var(--text-gray); font-size:0.85rem;">جدة، المملكة العربية السعودية</p>
+
+                    <div class="stats-row">
+                        <div>
+                            <div class="stat-num">7</div>
+                            <div style="font-size:0.8rem; color:var(--text-gray);">أغراض شاركتها</div>
+                        </div>
+                        <div>
+                            <div class="stat-num">4</div>
+                            <div style="font-size:0.8rem; color:var(--text-gray);">أغراض استفدت منها</div>
+                        </div>
+                        <div>
+                            <div class="stat-num">4.9 ⭐</div>
+                            <div style="font-size:0.8rem; color:var(--text-gray);">تقييم التعاون</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h4 style="margin-bottom:10px;">أغراضي المعروضة حالياً</h4>
+                    <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-bottom:1px solid var(--border);">
+                        <span>🎒 حقيبة ظهر رياضية</span>
+                        <span class="item-tag" style="background:#D1FAE5; color:#065F46;">متاح</span>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 0;">
+                        <span>💡 مصباح مكتب LED</span>
+                        <span class="item-tag">تم التسليم</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. شاشة الإشعارات -->
+            <div id="screen-notifications" class="screen">
+                <h2>الإشعارات 🔔</h2>
+                <div class="card">
+                    <div class="notif-item">
+                        <div style="font-size:1.5rem;">✅</div>
+                        <div>
+                            <div style="font-weight:700; font-size:0.95rem;">تم قبول طلبك!</div>
+                            <div style="font-size:0.85rem; color:var(--text-gray);">وافق أحمد محمد على طلبك لـ (طابعة ليزر HP).</div>
+                            <div style="font-size:0.75rem; color:var(--primary-dark); margin-top:4px;">منذ 5 دقائق</div>
+                        </div>
+                    </div>
+
+                    <div class="notif-item">
+                        <div style="font-size:1.5rem;">💬</div>
+                        <div>
+                            <div style="font-weight:700; font-size:0.95rem;">رسالة جديدة</div>
+                            <div style="font-size:0.85rem; color:var(--text-gray);">أرسل لك أحمد محمد رسالة لتنسيق موعد التسليم.</div>
+                            <div style="font-size:0.75rem; color:var(--primary-dark); margin-top:4px;">منذ 12 دقيقة</div>
+                        </div>
+                    </div>
+
+                    <div class="notif-item">
+                        <div style="font-size:1.5rem;">🌟</div>
+                        <div>
+                            <div style="font-weight:700; font-size:0.95rem;">شكراً لمساهمتك!</div>
+                            <div style="font-size:0.85rem; color:var(--text-gray);">حصلت على شارة "صديق البيئة" لمشاركتك 5 أغراض صالحة.</div>
+                            <div style="font-size:0.75rem; color:var(--primary-dark); margin-top:4px;">أمس</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- شريط التنقل السفلي -->
+        <div class="bottom-nav" id="bottomNav" style="display: none;">
+            <button class="nav-item active" onclick="showScreen('home', this)">
+                <span class="nav-icon">🏠</span>
+                <span>الرئيسية</span>
+            </button>
+          <div style="width:75px; height:75px; background:#D1FAE5; border-radius:50%; margin:0 auto 10px; display:flex; align-items:center; justify-content:center; font-size:2.2rem;">👩🏻‍💻</div>
+                    <h3>سارة عبدالله</h3>
+                    <p style="color:var(--text-gray); font-size:0.85rem;">جدة، المملكة العربية السعودية</p>
+
+                    <div class="stats-row">
+                        <div>
+                            <div class="stat-num">7</div>
+                            <div style="font-size:0.8rem; color:var(--text-gray);">أغراض شاركتها</div>
+                        </div>
+                        <div>
+                            <div class="stat-num">4</div>
+                            <div style="font-size:0.8rem; color:var(--text-gray);">أغراض استفدت منها</div>
+                        </div>
+                        <div>
+                            <div class="stat-num">4.9 ⭐</div>
+                            <div style="font-size:0.8rem; color:var(--text-gray);">تقييم التعاون</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h4 style="margin-bottom:10px;">أغراضي المعروضة حالياً</h4>
+                    <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-bottom:1px solid var(--border);">
+                        <span>🎒 حقيبة ظهر رياضية</span>
+                        <span class="item-tag" style="background:#D1FAE5; color:#065F46;">متاح</span>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 0;">
+                        <span>💡 مصباح مكتب LED</span>
+                        <span class="item-tag">تم التسليم</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. شاشة الإشعارات -->
+            <div id="screen-notifications" class="screen">
+                <h2>الإشعارات 🔔</h2>
+                <div class="card">
+                    <div class="notif-item">
+                        <div style="font-size:1.5rem;">✅</div>
+                        <div>
+                            <div style="font-weight:700; font-size:0.95rem;">تم قبول طلبك!</div>
+                            <div style="font-size:0.85rem; color:var(--text-gray);">وافق أحمد محمد على طلبك لـ (طابعة ليزر HP).</div>
+                            <div style="font-size:0.75rem; color:var(--primary-dark); margin-top:4px;">منذ 5 دقائق</div>
+                        </div>
+                    </div>
+
+                    <div class="notif-item">
+                        <div style="font-size:1.5rem;">💬</div>
+                        <div>
+                            <div style="font-weight:700; font-size:0.95rem;">رسالة جديدة</div>
+                            <div style="font-size:0.85rem; color:var(--text-gray);">أرسل لك أحمد محمد رسالة لتنسيق موعد التسليم.</div>
+                            <div style="font-size:0.75rem; color:var(--primary-dark); margin-top:4px;">منذ 12 دقيقة</div>
+                        </div>
+                    </div>
+
+                    <div class="notif-item">
+                        <div style="font-size:1.5rem;">🌟</div>
+                        <div>
+                            <div style="font-weight:700; font-size:0.95rem;">شكراً لمساهمتك!</div>
+                            <div style="font-size:0.85rem; color:var(--text-gray);">حصلت على شارة "صديق البيئة" لمشاركتك 5 أغراض صالحة.</div>
+                            <div style="font-size:0.75rem; color:var(--primary-dark); margin-top:4px;">أمس</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- شريط التنقل السفلي -->
+        <div class="bottom-nav" id="bottomNav" style="display: none;">
+            <button class="nav-item active" onclick="showScreen('home', this)">
+                <span class="nav-icon">🏠</span>
+                <span>الرئيسية</span>
+            </button>
+            <button class="nav-item" onclick="showScreen('add', this)">
+                <span class="nav-icon">➕</span>
+                <span>إضافة غرض</span>
+            </button>
+            <button class="nav-item" onclick="showScreen('chat', this)">
+                <span class="nav-icon">💬</span>
+                <span>الطلبات</span>
+            </button>
+            <button class="nav-item" onclick="showScreen('profile', this)">
+                <span class="nav-icon">👤</span>
+                <span>حسابي</span>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function showScreen(screenId, navBtn = null) {
+            // إخفاء جميع الشاشات
+            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+            // إظهار الشاشة المطلوبة
+            document.getElementById('screen-' + screenId).classList.add('active');
+
+            // التحكم في إظهار الأشرطة العلوية والسفلية
+            const topBar = document.getElementById('topBar');
+            const bottomNav = document.getElementById('bottomNav');
+
+            if (screenId === 'login') {
+                topBar.style.display = 'none';
+                bottomNav.style.display = 'none';
+            } else {
+                topBar.style.display = 'flex';
+                bottomNav.style.display = 'flex';
+            }
+
+            // تحديث حالة الأزرار السفلية
+            if (navBtn) {
+                document.querySelectorAll('.nav-item').forEach(btn => btn.classList.remove('active'));
+                navBtn.classList.add('active');
+            }
+        }
+
+        function enterApp() {
+            showScreen('home');
+            document.querySelectorAll('.nav-item')[0].classList.add('active');
+        }
+
+        function openDetails(title, icon, cat, loc, owner, desc) {
+            document.getElementById('det-title').innerText = title;
+            document.getElementById('det-icon').innerText = icon;
+            document.getElementById('det-cat').innerText = cat;
+            document.getElementById('det-loc').innerText = '📍 ' + loc;
+            document.getElementById('det-owner').innerText = owner;
+            document.getElementById('det-desc').innerText = desc;
+            showScreen('details');
+        }
+
+        function publishItem() {
+            alert('تم نشر الغرض بنجاح! شكراً لمساهمتك في مجتمع Share & Care 🌱');
+            showScreen('home');
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const text = input.value.trim();
+            if (!text) return;
+
+            const chatBox = document.getElementById('chatBox');
+            const msgDiv = document.createElement('div');
+            msgDiv.className = 'msg sent';
+            msgDiv.innerText = text;
+            chatBox.appendChild(msgDiv);
+            input.value = '';
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function confirmDelivery() {
+            alert('تم تأكيد تفاصيل الاستلام والتوصيل بنجاح! 🚚✅');
+            showScreen('home');
+        }
+    </script>
+</body>
+</html>
